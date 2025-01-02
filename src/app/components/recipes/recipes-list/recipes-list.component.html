@@ -1,1 +1,16 @@
+<div>
+  <button class="py-2 px-4 text-white font-bold bg-cyan-400 rounded-md mb-4">
+    Add new
+  </button>
+  <hr class="mb-3" />
+</div>
+<a href="#" class="flex justify-between bg-green-400 mb-3 p-3 rounded-lg" *ngFor="let recipe of recipes">
+  <div class="flex-1">
+    <h2 class="text-lg font-bold">{{ recipe.name }}</h2>
+    <p class="text-sm">{{ recipe.description }}</p>
+  </div>
+  <div class="flex-1">
+    <img class="rounded-lg" [src]="recipe.image_path" alt="Recipe image" />
+  </div>
+</a>
 <app-recipes-item></app-recipes-item>
