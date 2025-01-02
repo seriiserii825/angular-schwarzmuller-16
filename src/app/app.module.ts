@@ -17,6 +17,7 @@ import { ShoppingEditComponent } from './components/shopping-list/shopping-edit/
 import { PageServiceComponent } from './pages/page-service/page-service.component';
 import { CockpitComponent } from './pages/page-service/cockpit/cockpit.component';
 import { InputComponent } from './pages/ui/input/input.component';
+import { BtnComponent } from './pages/ui/btn/btn.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { InputComponent } from './pages/ui/input/input.component';
     ShoppingEditComponent,
     PageServiceComponent,
     CockpitComponent,
-    InputComponent
+    InputComponent,
+    BtnComponent
   ],
   imports: [
     BrowserModule,

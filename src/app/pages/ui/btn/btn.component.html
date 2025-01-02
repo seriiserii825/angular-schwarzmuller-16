@@ -1,0 +1,7 @@
+<button
+  [ngStyle]="{ color: color === 'white' ? 'text-white' : 'text-dark' }"
+  [class]="setClasses()"
+    class="rounded-lg transition duration-300 ease-in-out"
+>
+  <ng-content></ng-content>
+</button>
