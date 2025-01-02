@@ -1,2 +1,17 @@
-<h2>Add new server or blueprint</h2>
-<app-input label="Server Name" [value]="server_name" name="server_name" (valueChange)="getServerName($event)"></app-input>
+<h2 class="text-blue-900 text-md fon-bold">Add new server or blueprint</h2>
+<div class="mb-4">
+  <app-input
+    label="Server Name"
+    [value]="server_name"
+    name="server_name"
+    (valueChange)="getServerName($event)"
+  ></app-input>
+</div>
+<div class="mb-4">
+  <app-input
+    label="Server Content"
+    [value]="server_content"
+    name="server_content"
+    (valueChange)="getServerContent($event)"
+  ></app-input>
+</div>

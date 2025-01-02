@@ -7,8 +7,12 @@ import { Component } from '@angular/core';
 })
 export class CockpitComponent {
   server_name = '';
+  server_content = '';
 
   getServerName(value: string) {
     this.server_name = value;
+  }
+  getServerContent(value: string) {
+    this.server_content = value;
   }
 }
