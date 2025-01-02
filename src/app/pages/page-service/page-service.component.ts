@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-interface IServerElement {
-  type: string;
+export interface IServerElement {
+  type: 'server' | 'blueprint';
   name: string;
   content: string;
 }
