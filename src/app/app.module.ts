@@ -16,6 +16,7 @@ import { ShoppingListComponent } from './components/shopping-list/shopping-list.
 import { ShoppingEditComponent } from './components/shopping-list/shopping-edit/shopping-edit.component';
 import { PageServiceComponent } from './pages/page-service/page-service.component';
 import { CockpitComponent } from './pages/page-service/cockpit/cockpit.component';
+import { InputComponent } from './pages/ui/input/input.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CockpitComponent } from './pages/page-service/cockpit/cockpit.component
     ShoppingListComponent,
     ShoppingEditComponent,
     PageServiceComponent,
-    CockpitComponent
+    CockpitComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
