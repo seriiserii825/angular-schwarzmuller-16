@@ -11,21 +11,20 @@ export interface IServerElement {
   styleUrls: ['./page-service.component.css'],
 })
 export class PageServiceComponent {
-  server_elements: IServerElement[] = [
-    {
+  server_elements: IServerElement[] = [];
+
+  onServerAdded(event_data: { name: string; content: string }) {
+    this.server_elements.push({
       type: 'server',
-      name: 'some',
-      content: 'some',
-    },
-    {
+      name: event_data.name,
+      content: event_data.content,
+    });
+  }
+  onBlueprintAdded(event_data: { name: string; content: string }) {
+    this.server_elements.push({
       type: 'blueprint',
-      name: 'some',
-      content: 'some',
-    },
-    {
-      type: 'server',
-      name: 'some',
-      content: 'some',
-    },
-  ];
+      name: event_data.name,
+      content: event_data.content,
+    });
+  }
 }

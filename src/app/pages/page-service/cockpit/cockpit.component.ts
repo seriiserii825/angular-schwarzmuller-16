@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cockpit',
   templateUrl: './cockpit.component.html',
-  styleUrls: ['./cockpit.component.css']
+  styleUrls: ['./cockpit.component.css'],
 })
 export class CockpitComponent {
+  @Output() serverCreated = new EventEmitter<{
+    name: string;
+    content: string;
+  }>();
+  @Output() blueprintCreated = new EventEmitter<{
+    name: string;
+    content: string;
+  }>();
+
   server_name = '';
   server_content = '';
 
@@ -15,21 +24,25 @@ export class CockpitComponent {
   getServerContent(value: string) {
     this.server_content = value;
   }
+  buttonDisabled() {
+    return this.server_name === '' || this.server_content === '';
+  }
   addServer() {
-    // this.server_elements.push({
-    //   type: 'server',
-    //   name: this.server_name,
-    //   content: this.server_content
-    // });
+    this.serverCreated.emit({
+      name: this.server_name,
+      content: this.server_content,
+    });
+    this.resetServer();
   }
   addServerBlueprint() {
-    // this.server_elements.push({
-    //   type: 'blueprint',
-    //   name: this.server_name,
-    //   content: this.server_content
-    // });
+    this.blueprintCreated.emit({
+      name: this.server_name,
+      content: this.server_content,
+    });
+    this.resetServer();
   }
-  buttonDisabled(){
-    return this.server_name === '' || this.server_content === '';
+  resetServer(){
+    this.server_name = '';
+    this.server_content = '';
   }
 }
