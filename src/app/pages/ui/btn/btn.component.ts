@@ -1,17 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-btn',
   templateUrl: './btn.component.html',
-  styleUrls: ['./btn.component.css']
+  styleUrls: ['./btn.component.css'],
 })
 export class BtnComponent {
   @Input() color: 'white' = 'white';
   @Input() background: 'blue' | 'red' | 'green' | 'yellow' = 'blue';
   @Input() size: 'small' | 'medium' | 'large' = 'medium';
   @Input() type: 'submit' | 'button' = 'button';
+  @Input() disabled: boolean = false;
 
-  setClasses(){
+  setClasses() {
     let class_atrr = '';
     if (this.size === 'small') {
       class_atrr += 'px-2 py-1 text-xs ';
@@ -24,7 +25,7 @@ export class BtnComponent {
     }
     if (this.color === 'white') {
       class_atrr += 'text-white ';
-    }else{
+    } else {
       class_atrr += 'text-black ';
     }
     if (this.background === 'blue') {
@@ -39,6 +40,13 @@ export class BtnComponent {
     if (this.background === 'yellow') {
       class_atrr += 'bg-yellow-500 hover:bg-yellow-700 ';
     }
+    if (this.disabled) {
+      class_atrr += 'opacity-50 cursor-not-allowed ';
+    }
     return class_atrr;
+  }
+  @Output() buttonClicked = new EventEmitter<void>();
+  onClick() {
+    this.buttonClicked.emit();
   }
 }

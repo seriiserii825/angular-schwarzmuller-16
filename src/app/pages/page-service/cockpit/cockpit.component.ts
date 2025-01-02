@@ -15,4 +15,15 @@ export class CockpitComponent {
   getServerContent(value: string) {
     this.server_content = value;
   }
+  addServer() {
+    console.log('Server name: ' + this.server_name);
+    console.log('Server content: ' + this.server_content);
+  }
+  addServerBlueprint() {
+    console.log('Server name: ' + this.server_name);
+    console.log('Server content: ' + this.server_content);
+  }
+  buttonDisabled(){
+    return this.server_name === '' || this.server_content === '';
+  }
 }

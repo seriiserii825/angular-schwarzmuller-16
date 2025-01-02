@@ -2,6 +2,7 @@
   [ngStyle]="{ color: color === 'white' ? 'text-white' : 'text-dark' }"
   [class]="setClasses()"
     class="rounded-lg transition duration-300 ease-in-out"
+  (click)="onClick()"
 >
   <ng-content></ng-content>
 </button>

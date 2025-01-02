@@ -16,6 +16,6 @@
   ></app-input>
 </div>
 <footer class="flex">
-  <app-btn class="mr-2">Add server</app-btn>
-  <app-btn class="mr-2" background="green">Add server blueprint</app-btn>
+  <app-btn class="mr-2" [disabled]="buttonDisabled()" (buttonClicked)="addServer()">Add server</app-btn>
+  <app-btn class="mr-2" [disabled]="buttonDisabled()" (buttonClicked)="addServerBlueprint()" background="green">Add server blueprint</app-btn>
 </footer>
