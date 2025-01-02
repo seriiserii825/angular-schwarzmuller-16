@@ -1,2 +1,29 @@
-<app-server></app-server>
-<app-server></app-server>
+<div class="container max-w-96 m-auto pt-5">
+  <div class="flex mb-5 h-8">
+    <input class="bg-blue-200 flex-1" type="text" [(ngModel)]="server_name" />
+    <button
+      class="cursor-pointer disabled:cursor-not-allowed bg-blue-500 text-white px-2"
+      (click)="addServer()"
+      [disabled]="server_name == ''"
+    >
+      Add Server
+    </button>
+  </div>
+  <app-server *ngFor="let server of servers"></app-server>
+  <div class="mb-5">
+    <button class="bg-blue-500 text-white px-2 mb-3" (click)="toggleDetails()">
+      Toggle Details
+    </button>
+    <div
+      *ngFor="let item of log_output; let i = index"
+      [ngStyle]="{ 'background-color': getBgColor(i) }"
+      [ngClass]="{ 'text-blue-500': i > 4 }"
+      class="p-2 bg-pink-50 text-dark"
+    >
+      {{ item }}
+    </div>
+    <p *ngIf="server_details" class="p-2 border border-cyan-50">
+      Secret password = tuna
+    </p>
+  </div>
+</div>
