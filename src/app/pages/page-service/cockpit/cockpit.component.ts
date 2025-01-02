@@ -16,12 +16,18 @@ export class CockpitComponent {
     this.server_content = value;
   }
   addServer() {
-    console.log('Server name: ' + this.server_name);
-    console.log('Server content: ' + this.server_content);
+    // this.server_elements.push({
+    //   type: 'server',
+    //   name: this.server_name,
+    //   content: this.server_content
+    // });
   }
   addServerBlueprint() {
-    console.log('Server name: ' + this.server_name);
-    console.log('Server content: ' + this.server_content);
+    // this.server_elements.push({
+    //   type: 'blueprint',
+    //   name: this.server_name,
+    //   content: this.server_content
+    // });
   }
   buttonDisabled(){
     return this.server_name === '' || this.server_content === '';

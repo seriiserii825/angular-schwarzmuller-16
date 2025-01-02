@@ -1,0 +1,6 @@
+<div class="border border-gray-300">
+  <header class="py-2 px-4 bg-slate-300">{{ element.name }}</header>
+  <div class="py-2 px-4" [class]="{'text-red-500': element.type == 'server'}">
+    {{ element.content }}
+  </div>
+</div>

@@ -1,3 +1,7 @@
 <div class="container max-w-sm m-auto pt-8">
   <app-cockpit></app-cockpit>
+  <hr class="my-4" />
+  <div class="mb-3" *ngFor="let element of server_elements">
+    <app-server-element [element]="element"></app-server-element>
+  </div>
 </div>
