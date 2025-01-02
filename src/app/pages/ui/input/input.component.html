@@ -1,2 +1,2 @@
-<label for=""></label>
-<input type="text" value="" name="" id=""/>
+<label class="block font-bold mb-1" *ngIf="label" [for]="name">{{ label }}</label>
+<input class="border border-gray-300 w-full indent-2" (input)="onInput($event)" type="text" [value]="value" [name]="name" [id]="name"/>

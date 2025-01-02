@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./cockpit.component.css']
 })
 export class CockpitComponent {
+  server_name = '';
 
+  getServerName(value: string) {
+    this.server_name = value;
+  }
 }
