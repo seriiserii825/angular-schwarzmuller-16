@@ -1,4 +1,7 @@
-<app-shopping-edit>
-</app-shopping-edit>
-<hr>
-The List
+<app-shopping-edit></app-shopping-edit>
+<hr class="py-2" />
+<ul class="border border-gray-200 rounded-md">
+  <li *ngFor="let ingredient of ingredients" class="p-2 border-b text-gray-500">
+    {{ ingredient.name }} ({{ ingredient.amount }})
+  </li>
+</ul>
