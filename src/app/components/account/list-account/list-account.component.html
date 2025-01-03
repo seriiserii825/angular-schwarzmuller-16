@@ -1,1 +1,13 @@
-<p>list-account works!</p>
+<div
+  *ngFor="let account of accounts"
+  class="mb-4 p-4 border border-slate-400 rounded-md"
+>
+  <h3 class="pb-3 font-bold">{{ account.name }}</h3>
+  <hr>
+  <h4 class="my-3">This account is <span class="font-bold">{{ account.status }}</span></h4>
+  <div class="flex gap-2">
+    <app-btn>Set to <strong>active</strong></app-btn>
+    <app-btn background="green">Set to <strong>inactive</strong></app-btn>
+    <app-btn background="red">Set to <strong>unkown</strong></app-btn>
+  </div>
+</div>

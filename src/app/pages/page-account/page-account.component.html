@@ -1,1 +1,6 @@
-<app-create-account (emitAccount)="createAccount($event)"></app-create-account>
+<div class="mb-4">
+  <app-create-account
+    (emitAccount)="createAccount($event)"
+  ></app-create-account>
+</div>
+<app-list-account [accounts]="accounts"></app-list-account>
