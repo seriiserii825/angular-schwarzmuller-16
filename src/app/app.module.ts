@@ -26,6 +26,8 @@ import { EvenComponent } from './pages/page-game-control/even/even.component';
 import { DropdownDirectiveDirective } from './directives/dropdown-directive.directive';
 import { BasicHighlightDirectiveDirective } from './directives/basic-highlight-directive.directive';
 import { PageAccountComponent } from './pages/page-account/page-account.component';
+import { ListAccountComponent } from './components/account/list-account/list-account.component';
+import { CreateAccountComponent } from './components/account/create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { PageAccountComponent } from './pages/page-account/page-account.componen
     EvenComponent,
     DropdownDirectiveDirective,
     BasicHighlightDirectiveDirective,
-    PageAccountComponent
+    PageAccountComponent,
+    ListAccountComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
