@@ -27,4 +27,12 @@ export class PageAccountComponent {
   createAccount(account: IAccount) {
     this.accounts.push(account);
   }
+  changeStatus(result: {id: number, status: IAccount['status']}): void {
+    this.accounts = this.accounts.map(account => {
+      if (account.id === result.id) {
+        account.status = result.status;
+      }
+      return account;
+    });
+  }
 }
