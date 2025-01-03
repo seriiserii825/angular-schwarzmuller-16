@@ -6,8 +6,8 @@
   <hr>
   <h4 class="my-3 text-gray-500">This account is <span class="font-bold text-gray-900">{{ account.status }}</span></h4>
   <div class="flex gap-2">
-    <app-btn (buttonClicked)="setStatus(account, 'active')">Set to <strong>active</strong></app-btn>
-    <app-btn (buttonClicked)="setStatus(account, 'inactive')" background="green">Set to <strong>inactive</strong></app-btn>
-    <app-btn (buttonClicked)="setStatus(account, 'unknown')" background="red">Set to <strong>unkown</strong></app-btn>
+    <app-btn class="opacity-60" [ngClass]="{'opacity-100': account.status === 'active'}" (buttonClicked)="setStatus(account, 'active')">Set to <strong>active</strong></app-btn>
+    <app-btn class="opacity-60" [ngClass]="{'opacity-100': account.status === 'inactive'}" (buttonClicked)="setStatus(account, 'inactive')" background="green">Set to <strong>inactive</strong></app-btn>
+    <app-btn class="opacity-60" [ngClass]="{'opacity-100': account.status === 'unknown'}" (buttonClicked)="setStatus(account, 'unknown')" background="red">Set to <strong>unkown</strong></app-btn>
   </div>
 </div>
