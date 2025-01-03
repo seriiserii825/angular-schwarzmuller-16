@@ -10,12 +10,16 @@
     </div>
     <div class="hidden lg:flex lg:gap-x-12 flex-1">
       <a href="#" class="text-sm/6 font-semibold text-gray-900">Recipes</a>
-      <a href="#" class="text-sm/6 font-semibold text-gray-900">Shopping list</a>
+      <a href="#" class="text-sm/6 font-semibold text-gray-900"
+        >Shopping list</a
+      >
       <div class="relative ml-auto">
         <button
           type="button"
           class="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900"
           aria-expanded="false"
+          appDropdownDirective
+          #r="appDropdownDirective"
         >
           Manage
           <svg
@@ -33,7 +37,8 @@
           </svg>
         </button>
         <div
-          class="opacity-0 absolute right-0 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
+          [ngClass]="{ hidden: !r.is_open }"
+          class="hidden absolute right-0 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
         >
           <div class="p-4">
             <div
