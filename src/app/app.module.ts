@@ -20,6 +20,9 @@ import { InputComponent } from './pages/ui/input/input.component';
 import { BtnComponent } from './pages/ui/btn/btn.component';
 import { ServerElementComponent } from './pages/page-service/server-element/server-element.component';
 import { PageGameControlComponent } from './pages/page-game-control/page-game-control.component';
+import { GameControlComponent } from './pages/page-game-control/game-control/game-control.component';
+import { OddComponent } from './pages/page-game-control/odd/odd.component';
+import { EvenComponent } from './pages/page-game-control/even/even.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { PageGameControlComponent } from './pages/page-game-control/page-game-co
     InputComponent,
     BtnComponent,
     ServerElementComponent,
-    PageGameControlComponent
+    PageGameControlComponent,
+    GameControlComponent,
+    OddComponent,
+    EvenComponent
   ],
   imports: [
     BrowserModule,
