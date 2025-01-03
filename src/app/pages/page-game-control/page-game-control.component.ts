@@ -9,6 +9,8 @@ export class PageGameControlComponent {
   interval: any = 0;
   last_number: number = 0;
   interval_is_running: boolean = false;
+  odd_numbers: number[] = [];
+  even_numbers: number[] = [];
 
   startGame() {
     if (this.interval_is_running) {
@@ -17,7 +19,11 @@ export class PageGameControlComponent {
     }
     this.interval = setInterval(() => {
       this.last_number++;
-      console.log(this.last_number);
+      if (this.last_number % 2 === 0) {
+        this.even_numbers.push(this.last_number);
+      } else {
+        this.odd_numbers.push(this.last_number);
+      }
       this.interval_is_running = true;
     }, 1000);
   }

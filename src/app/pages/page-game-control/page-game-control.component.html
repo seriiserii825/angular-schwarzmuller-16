@@ -1,3 +1,5 @@
 <div class="container py-12 max-w-sm m-auto">
   <app-game-control (intervalFired)="startGame()" (intervalStopped)="stopGame()"></app-game-control>
+  <app-odd *ngFor="let number of odd_numbers" [last_number]="number"></app-odd>
+  <app-even *ngFor="let number of even_numbers" [last_number]="number"></app-even>
 </div>
