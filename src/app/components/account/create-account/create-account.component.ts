@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { IAccount } from 'src/app/interfaces/IAccount';
+import { Component } from '@angular/core';
 import { LoggingService } from '../logging.service';
+import {AccountService} from '../account.service';
 
 @Component({
   selector: 'app-create-account',
@@ -9,8 +9,7 @@ import { LoggingService } from '../logging.service';
   providers: [LoggingService],
 })
 export class CreateAccountComponent {
-  @Output() emitAccount = new EventEmitter<IAccount>();
-  constructor(private loggingService: LoggingService) {}
+  constructor(private loggingService: LoggingService, private accountService: AccountService) {}
   account_name: string = '';
   options = ['active', 'inactive', 'unknown'];
   account_status: 'active' | 'inactive' | 'unknown' = 'active';
@@ -25,11 +24,11 @@ export class CreateAccountComponent {
     this.loggingService.logStatusChange(this.account_status);
   }
   createAccount() {
-    this.emitAccount.emit({
+    this.accountService.createAccount({
       id: new Date().getTime(),
       name: this.account_name,
       status: this.account_status,
-    });
+    })
     this.account_name = '';
     this.account_status = 'active';
   }

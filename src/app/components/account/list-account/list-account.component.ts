@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IAccount } from 'src/app/interfaces/IAccount';
-import {LoggingService} from '../logging.service';
+import { LoggingService } from '../logging.service';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-list-account',
@@ -9,19 +10,18 @@ import {LoggingService} from '../logging.service';
   providers: [LoggingService],
 })
 export class ListAccountComponent {
-  @Output() emitAccount = new EventEmitter<{
-    id: number;
-    status: IAccount['status'];
-  }>();
   @Input() accounts: IAccount[] = [];
 
-  constructor(private loggingService: LoggingService) {}
+  constructor(
+    private loggingService: LoggingService,
+    private accountService: AccountService
+  ) {}
   setStatus(account: IAccount, status: IAccount['status']): void {
     const result = {
       id: account.id,
       status,
-    }
-    this.emitAccount.emit(result);
+    };
+    this.accountService.changeStatus(result)
     this.loggingService.logStatusChange(status);
   }
 }

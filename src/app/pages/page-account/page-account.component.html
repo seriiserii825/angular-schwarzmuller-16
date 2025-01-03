@@ -1,6 +1,4 @@
 <div class="mb-4">
-  <app-create-account
-    (emitAccount)="createAccount($event)"
-  ></app-create-account>
+  <app-create-account></app-create-account>
 </div>
-<app-list-account (emitAccount)="changeStatus($event)" [accounts]="accounts"></app-list-account>
+<app-list-account [accounts]="accounts"></app-list-account>
