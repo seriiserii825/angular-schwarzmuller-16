@@ -25,6 +25,7 @@ import { OddComponent } from './pages/page-game-control/odd/odd.component';
 import { EvenComponent } from './pages/page-game-control/even/even.component';
 import { DropdownDirectiveDirective } from './directives/dropdown-directive.directive';
 import { BasicHighlightDirectiveDirective } from './directives/basic-highlight-directive.directive';
+import { PageAccountComponent } from './pages/page-account/page-account.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { BasicHighlightDirectiveDirective } from './directives/basic-highlight-d
     OddComponent,
     EvenComponent,
     DropdownDirectiveDirective,
-    BasicHighlightDirectiveDirective
+    BasicHighlightDirectiveDirective,
+    PageAccountComponent
   ],
   imports: [
     BrowserModule,
