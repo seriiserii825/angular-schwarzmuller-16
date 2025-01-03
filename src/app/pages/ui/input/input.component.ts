@@ -9,6 +9,7 @@ export class InputComponent {
   @Input() label: string = '';
   @Input() value: string = '';
   @Input() name: string = '';
+  @Input() placeholder: string = '';
 
   @Output() valueChange = new EventEmitter<string>();
 
