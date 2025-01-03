@@ -19,6 +19,7 @@ import { CockpitComponent } from './pages/page-service/cockpit/cockpit.component
 import { InputComponent } from './pages/ui/input/input.component';
 import { BtnComponent } from './pages/ui/btn/btn.component';
 import { ServerElementComponent } from './pages/page-service/server-element/server-element.component';
+import { PageGameControlComponent } from './pages/page-game-control/page-game-control.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ServerElementComponent } from './pages/page-service/server-element/serv
     CockpitComponent,
     InputComponent,
     BtnComponent,
-    ServerElementComponent
+    ServerElementComponent,
+    PageGameControlComponent
   ],
   imports: [
     BrowserModule,
