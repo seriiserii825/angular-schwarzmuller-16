@@ -1,4 +1,11 @@
-<h2 class="text-blue-900 text-md fon-bold">Add new server or blueprint</h2>
+<h2
+  appBasicHighlightDirective
+  [defaultColor]="'yellow'"
+  [highlightColor]="'red'"
+  class="text-blue-900 text-md fon-bold"
+>
+  Add new server or blueprint
+</h2>
 <div class="mb-4">
   <app-input
     label="Server Name"
@@ -16,6 +23,17 @@
   ></app-input>
 </div>
 <footer class="flex">
-  <app-btn class="mr-2" [disabled]="buttonDisabled()" (buttonClicked)="addServer()">Add server</app-btn>
-  <app-btn class="mr-2" [disabled]="buttonDisabled()" (buttonClicked)="addServerBlueprint()" background="green">Add server blueprint</app-btn>
+  <app-btn
+    class="mr-2"
+    [disabled]="buttonDisabled()"
+    (buttonClicked)="addServer()"
+    >Add server</app-btn
+  >
+  <app-btn
+    class="mr-2"
+    [disabled]="buttonDisabled()"
+    (buttonClicked)="addServerBlueprint()"
+    background="green"
+    >Add server blueprint</app-btn
+  >
 </footer>
